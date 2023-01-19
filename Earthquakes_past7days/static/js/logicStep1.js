@@ -52,17 +52,16 @@ L.control.layers(baseMaps).addTo(map);
 // let torontoData = "https://raw.githubusercontent.com/EricaLedezma/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let past7days = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+let past7days = "https://raw.githubusercontent.com/EricaLedezma/Mapping_Earthquakes/Earthquakes_past7days/all_week.geojson.json";
 
 // Create a style for the lines.
-let myStyle = {
-  color: "#ffffa1",
-  weight: 2,
-}
+// let myStyle = {
+//   color: "#ffffa1",
+//   weight: 2,
+// }
 
 // Retrieve the earthquake GeoJSON data.
-d3.json(past7days).then(function(data) {
-  console.log(data);  
+d3.json(past7days).then(function(data) { 
 // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data).addTo(map);
 });
